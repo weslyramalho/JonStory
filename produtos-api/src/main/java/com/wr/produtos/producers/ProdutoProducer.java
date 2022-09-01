@@ -9,5 +9,5 @@ public class ProdutoProducer {
 
     @Autowired
     private final AmqpTemplate amqpTemplate;
-    
+
 }
