@@ -30,6 +30,13 @@ public class EstoqueService {
         return null;
     }
 
+    public Estoque buscar(UUID id){
+        return estoqueRepository.findById(id).orElseThrow();
+    }
+    public List<Estoque> buscarTodos(){
+        return estoqueRepository.findAll();
+    }
+
     public ProdutoEstoque porProduto(UUID produtoId){
         List<Estoque> estoques = estoqueRepository.findAll();
 
