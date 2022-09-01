@@ -17,7 +17,7 @@ import java.util.UUID;
 
 @Component
 public class ProdutoClient {
-    final String BASE_URL = "http://localhost:8081/api/produtos"
+    final String BASE_URL = "http://localhost:8081/api/produtos";
 
     private final OkHttpClient client;
     private final Gson gson;
