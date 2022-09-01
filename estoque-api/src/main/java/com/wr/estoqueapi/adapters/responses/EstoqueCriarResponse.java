@@ -1,6 +1,8 @@
 package com.wr.estoqueapi.adapters.responses;
 
-import java.util.UUID;
+import lombok.Builder;
 
-public record EstoqueCriarResponse(UUID id UUID produtoId, int quantidade, int quantidadeDisponivel) {
+import java.util.UUID;
+@Builder
+public record EstoqueCriarResponse(UUID id, UUID produtoId, int quantidade, int quantidadeDisponivel) {
 }
