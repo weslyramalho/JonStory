@@ -41,9 +41,10 @@ public class EstoqueService {
         List<Estoque> estoques = estoqueRepository.findAll();
 
         List<Estoque> produtoEstoque = estoques.stream().filter(estoque -> estoque.getProdutoId().equals(produtoId)).toList();
-        List<Integer> quantidades = produtoEstoque.stream().reduce(0, Integer::sum);
+        List<Integer> quantidades = produtoEstoque.stream().map(Estoque::getQuantidade).toList();
+        int quantidadeDisponivel = quantidades.stream().reduce(0, Integer::sum);
 
-        return new ProdutoEstoque(produtoId, verSeProdutoExiste());
+        return new ProdutoEstoque(produtoId, quantidadeDisponivel);
     }
 
 

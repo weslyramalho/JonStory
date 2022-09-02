@@ -29,7 +29,7 @@ public class ProdutoClient {
 
     public Produto getById(UUID id) throws IOException{
         Request request = new Request.Builder()
-                .url(BASE_URL + "/" id.toString())
+                .url(BASE_URL + "/" + id.toString())
                 .build();
 
         Response response = client.newCall(request).execute();
